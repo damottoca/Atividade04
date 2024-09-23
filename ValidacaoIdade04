@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class ValidacaodeIdade04 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int idade = -1;
+
+            while (idade <= 0) {
+                System.out.print("Por favor, insira sua idade: ");
+                if (scanner.hasNextInt()) {
+                    idade = scanner.nextInt();
+                    if (idade <= 0) {
+                        System.out.println("Idade inválida. A idade deve ser maior que 0.");
+                    }
+                } else {
+                    System.out.println("Entrada inválida. Por favor, insira um número inteiro.");
+                    scanner.next(); // Limpa a entrada inválida
+                }
+            }
+
+            System.out.println("Obrigado! Sua idade é: " + idade);
+            scanner.close();
+        }
+    }
+
+
