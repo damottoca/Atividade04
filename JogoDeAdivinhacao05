@@ -1,0 +1,37 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class JogoDeAdivinhacao05 {
+    public static void main(String[] args) {
+        // Criação do objeto Scanner para leitura do valor fornecido pelo usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Criação do objeto Random para gerar um número aleatório
+        Random random = new Random();
+        int numeroAleatorio = random.nextInt(100) + 1; // Número entre 1 e 100
+
+        int tentativa = 0;
+        int numeroUsuario = 0;
+
+        System.out.println("Bem-vindo ao Jogo de Adivinhação!");
+        System.out.println("Tente adivinhar o número entre 1 e 100.");
+
+        // Loop até o usuário acertar o número
+        while (numeroUsuario != numeroAleatorio) {
+            System.out.print("Digite seu palpite: ");
+            numeroUsuario = scanner.nextInt();
+            tentativa++;
+
+            if (numeroUsuario < numeroAleatorio) {
+                System.out.println("O número é maior!");
+            } else if (numeroUsuario > numeroAleatorio) {
+                System.out.println("O número é menor!");
+            } else {
+                System.out.println("Parabéns! Você acertou o número em " + tentativa + " tentativas.");
+            }
+        }
+
+        // Fechamento do Scanner
+        scanner.close();
+    }
+}
